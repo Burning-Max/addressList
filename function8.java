@@ -1,4 +1,3 @@
-//ÐÞ¸ÄºóµÄ
 import java.text.Collator;  
 import java.util.Arrays;  
 import java.util.Comparator;  
