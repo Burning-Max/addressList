@@ -64,11 +64,11 @@ class function5 implements common
 	{
 		Scanner sc = new Scanner(System.in); 
 		System.out.println("请输入您想要删除的联系人的名字:");//提示信息
-		String name = sc.nextLine(); 
-        
+		String name = sc.nextLine();
 		//接收用户字符 注意:next() 和 nextLine() 的区别 <--!next()在接收到有效数据前，所有的空格或者tab键等输入被忽略，若有有效数据，则遇到这些键退出--> 
 		
-		operateLinkManInfo.openLinkMan();//打开文件linkman.txt
+		ObjectInputStream ois = null;
+		ois = operateLinkManInfo.openLinkMan();//打开文件linkman.txt
 		if(!operateLinkManInfo.deleteInfo(name, ois)){//文件操作:参照用户名<字符匹配>, 找到并删除, 关闭并退出
 			System.out.println("操作失败!");
 		}
@@ -90,12 +90,12 @@ class operateLinkManInfo(){
 	  
 	}
 	
-	void openLinkMan(){
+	ObjectInputStream  openLinkMan(){
 		
 		ObjectInputStream ois = null;//对象,序列化  *未用到
 
 		try{
-			static ois = new ObjectInputStream(new FileInputStream(f));
+			return  ois = new ObjectInputStream(new FileInputStream(f));
 		}catch(FileNotFoundException e){
 			e.printStackTrace();
 		}catch(IOException e){
