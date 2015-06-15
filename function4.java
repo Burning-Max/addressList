@@ -1,4 +1,23 @@
-王鸿运
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkul/jnBn87vifUUNxg3/4AW31F4s2DEu3fEKsSSCAkVEZoX2PDrWHAv9jM5EVS2hCLJAptWyZqB7zteFVYkvB9Dr7x19rExe6Mo6xGO7ny5hdxurP0thRZ5pyGcGbFEIW9VQlcqX7AgJWRs1k59SAmEdQW3cZxJ22n/Swe/roORq9xFJNH0tyQsCmh/9A+ob23tQr2tikm2EIhRznaInLcJ+5KvQWALTYYMFLgx2ytVal/SkFl26JMDzV/1MBNGpKemUyHCGwQHGyU9erK/p4Daw1/nW/7aGTuTzWGcFkZBnWJTY+Q76XjgdqfpmHq7nB/xr98ddhsiuG9Gc7l90H 434317951@qq.com
-侯鋆
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOvaZFw1pogrg8oDAb4Slmkvr6B3AcMfZruafNXPY3QrQxDVem1+dBB0pVGyARjTMx00KKIxL4OKaqzYoahz0vW+W38X4hQ/L/l6XO6d4afrkDFI2h4jjfCjmLVEiijOKNotTB6Dr5ld8aU9x9MARN/McdspFjGAxLt1IG7U7+da1v9PjtCsl0MsrDJb1RHr6VT0Nd8egadMZ6S0pYNMH9oWl2nE02Ca8QofCSwkucK0OiVimMznwrKezBVBgUVm+UVMe4os56ATCHcMlX41Du4aGNDJ0UhxiyUXPgN8QZRcECfMYRlaCdbmI8qRzzR6YU5CD8U5rbq+TIlSx8gke9 1144724015@qq.com
+
+import java.util.Scanner; 
+import java.io.IOException;
+import java.io.FileWriter;
+
+public class Funtion4+ {
+	//private static final String LINE_SEPARATOR = System.getProperty("line.separtor"); 
+	public static void main(String[] args) throws IOException{
+		Scanner in = new Scanner(System.in);
+		String name ;
+		String phone;
+		System.out.printf("请输入联系人姓名和电话\n");
+	    name =in.nextLine();
+		phone = in.nextLine();
+		in.close();
+		System.out.print(name+"  "+phone);
+		FileWriter fw = new FileWriter("linkman.txt",true);
+		fw.write("联系人： "+name+"  "+"电话： "+phone+"\r\n");
+		fw.flush();
+		fw.close();
+	}	
+}
+
